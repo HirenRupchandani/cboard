@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
+from crimsonboard import views
 # urlpatterns = [
 #     path('', include('crimsonboard.urls')),
 #     path('admin/', admin.site.urls),
@@ -28,4 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('crimsonboard.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    path('testjson/', views.testjson),
+    path('', views.homeview, name='React'),
 ]
